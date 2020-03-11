@@ -1,0 +1,215 @@
+@copyrighted 1999 Prof. Colber
+Name and ID:  Natalie Valett 1792189
+Course and section: COMSC-110-1021
+
+1. Objective (1 sentence brief description of what this will do): 
+Retrieve an input and output file name from user, given ability to accept default
+
+2. Requirements (any and all requirements organized by input, processing, output, data):
+INPUT (any data items to be input): 
+input file name
+output file name
+OK confirmation
+
+PROCESSING (list of significant parts of the objective that will become the list of code blocks in program):
+1. Input validation
+2. chack if user wants to preserve default or change file names
+
+OUTPUT (list of anything output: introduction, data items, labels, prompts) : 
+-introduction of objective, author, user instructions/rules
+- prompt for input file name
+- prompt for output file name
+- output output and input file name
+- output prompt for confirmation
+
+DATA (list of all data items: definition, data type, formatting, or any other specifications):
+- dfile: default filename, used for both input and output
+- enterKey: boolean: true if enter key is pressed, false if else
+- iFileName: input file name, user chosen
+- oFileName: output file name, user chosen
+- continue string
+
+3. Algorithm instructions (recipe)
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 dFileName = "fileContainingEmails.txt"
+30 enterKey = false
+40 output a prompt to the console using dFileName
+50 input iFileName
+60 if length of iFileName is 0, then enterKey = true
+61 if last 4 chars of filename are .txt, go to 64
+62 output "The file name must end in \".txt\". Please try again: "
+63 go to 40
+64 if filename is 5 chars or more, or more, go to 70
+65 output "The file name must be at least 5 charactes long. Please try again:"
+66 go to 40
+70 if enterKey is true, then iFileName = dFileName 
+80 if enterKey is true, then dFileName = "copyPasteMyEmails.txt", else dFileName = iFileName
+90 output a prompt to the console using dFileName
+100 input oFileName
+110 enterKey = false;
+120 if length of oFilename is 0, then enterKey = true
+130 if enter key is true, the oFileName = dFilename
+140 output label for the input file name, and iFileName
+150 output label for the output file name, and oFileName
+160 output a prompt to press ENTER key to continue
+170 input a character
+999 END
+
+4. Test cases (list purpose of each test case, any input values, and expected results)
+
+Test case #1: choose default
+Enter input filename [default: fileContainingEmails.txt]: 
+Enter output filename [default: copyPasteMyEmails.txt]: 
+Input file: fileContainingEmails.txt
+Output file: copyPasteMyEmails.txt
+press ENTER key to continue:
+
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 dFileName = "fileContainingEmails.txt"
+30 enterKey = false
+40 output a prompt to the console using dFileName
+50 input iFileName
+60 if length of iFileName is 0 -> enterKey = true
+61 if last 4 chars of filename are .txt, go to 64
+64 if filename is 5 chars or more, or more, go to 70
+70 if enterKey is true -> then iFileName = dFileName = fileContainingEmails.txt
+80 if enterKey is true, then dFileName = "copyPasteMyEmails.txt", else dFileName = iFileName
+90 output a prompt to the console using dFileName
+100 input oFileName
+110 enterKey = false;
+120 if length of oFilename is 0 -> enterKey = true
+130 if enter key is true -> the oFileName = dFilename = copyPasteMyEmails.txt
+140 output label for the input file name, and fileContainingEmails.txt
+150 output label for the output file name, and copyPasteMyEmails.txt
+160 output a prompt to press ENTER key to continue
+170 input a character
+999 END
+
+Test case #2: 
+Enter input filename [default: fileContainingEmails.txt]: x.txt 
+Enter output filename [default: x.txt]: 
+Input file: x.txt
+Output file: x.txt
+press ENTER key to continue:
+
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 dFileName = "fileContainingEmails.txt"
+30 enterKey = false
+40 output a prompt to the console using dFileName
+50 input iFileName = x.txt
+60 if length of iFileName is 0, -> false
+61 if last 4 chars of filename are .txt, go to 64
+62 output "The file name must end in \".txt\". Please try again: "
+63 go to 40
+64 if filename is 5 chars or mmore, or more, go to 70
+65 output "The file name must be at least 5 charactes long. Please try again:"
+66 go to 40
+70 if enterKey is true, -False
+80 else dFileName = iFileName = x.txt
+90 output a prompt to the console using dFileName
+100 input oFileName
+110 enterKey = false;
+120 if length of oFilename is 0 -> then enterKey = true
+130 if enter key is true -> the oFileName = dFilename = x.txt
+140 output label for the input file name, and x.txt
+150 output label for the output file name, and x.txt
+160 output a prompt to press ENTER key to continue
+170 input a character
+999 END
+
+Test case #3:
+Enter input filename [default: fileContainingEmails.txt]: 
+Enter output filename [default: copyPasteMyEmails.txt]: y.txt 
+Input file: fileContainingEmails.txt
+Output file: y.txt
+press ENTER key to continue:
+
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 dFileName = "fileContainingEmails.txt"
+30 enterKey = false
+40 output a prompt to the console using dFileName
+50 input iFileName = ""
+60 if length of iFileName is 0 -> then enterKey = true
+61 if last 4 chars of filename are .txt, go to 64
+64 if filename is 5 chars or more, go to 70
+70 if enterKey is true -> then iFileName = dFileName = fileContainingEmails.txt
+80 if enterKey is true -> then dFileName = "copyPasteMyEmails.txt"
+90 output a prompt to the console using dFileName
+100 input oFileName = y.txt
+110 enterKey = false;
+120 if length of oFilename is 0, false
+130 if enter key is true, false
+140 output label for the input file name, and fileContainingEmails.txt
+150 output label for the output file name, and y.txt
+160 output a prompt to press ENTER key to continue
+170 input a character
+999 END
+
+Test case #4:
+Enter input filename [default: fileContainingEmails.txt]: x.txt 
+Enter output filename [default: x.txt]: y.txt 
+Input file: x.txt
+Output file: y.txt
+press ENTER key to continue:
+
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 dFileName = "fileContainingEmails.txt"
+30 enterKey = false
+40 output a prompt to the console using dFileName
+50 input iFileName = x.txt
+60 if length of iFileName is 0 -> false
+61 if last 4 chars of filename are .txt, go to 64
+64 if filename is 5 chars, or more, go to 70
+70 if enterKey is true -> false
+80 else dFileName = iFileName = x.txt
+90 output a prompt to the console using x.txt
+100 input oFileName = y.txt
+110 enterKey = false;
+120 if length of oFilename is 0 -> false
+130 if enter key is true -> false
+140 output label for the input file name, and x.txt
+150 output label for the output file name, and y.txt
+160 output a prompt to press ENTER key to continue
+170 input a character
+999 END
+
+Test Case #5: 
+Enter input filename [default: fileContainingEmails.txt]: .txt
+The file name must be at least 5 charactes long. Please try again:
+Enter input filename [default: fileContainingEmails.txt]: x.txt
+Enter output filename [default: x.txt]: y.txt 
+Input file: x.txt
+Output file: y.txt
+press ENTER key to continue:
+
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 dFileName = "fileContainingEmails.txt"
+30 enterKey = false
+40 output a prompt to the console using dFileName
+50 input iFileName = .txt
+60 if length of iFileName is 0 -> false
+61 if last 4 chars of filename are .txt, go to 70
+62 output "The file name must be at least 5 charactes long. Please try again:"
+63 go to 40
+40 output a prompt to the console using dFileName
+50 input iFileName = x.txt
+60 if length of iFileName is 0 -> false
+61 if last 4 chars of filename are .txt, go to 70
+70 if enterKey is true -> false
+80 else dFileName = iFileName = x.txt
+90 output a prompt to the console using x.txt
+100 input oFileName = y.txt
+110 enterKey = false;
+120 if length of oFilename is 0 -> false
+130 if enter key is true -> false
+140 output label for the input file name, and x.txt
+150 output label for the output file name, and y.txt
+160 output a prompt to press ENTER key to continue
+170 input a character
+999 END

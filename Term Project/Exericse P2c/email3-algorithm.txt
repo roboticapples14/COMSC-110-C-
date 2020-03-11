@@ -1,0 +1,445 @@
+@copyrighted 1999 Prof. Colber
+Name and ID:  Natalie Valett 1792189
+Course and section: COMSC-110-1021
+
+1. Objective (1 sentence brief description of what this will do): 
+Retrieve an input and output file names from user, given ability to accept default
+Open input file and read, find @ symbols and validate detected string as email address
+print any valid email addresses found
+
+2. Requirements (any and all requirements organized by input, processing, output, data):
+INPUT (any data items to be input): 
+input file name
+output file name
+OK confirmation
+
+PROCESSING (list of significant parts of the objective that will become the list of code blocks in program):
+1. Input validation
+2. chack if user wants to preserve default or change file names
+3. input validation for file name
+4. assign chosen file to filename
+5. for each line, find all @ signs in line
+6. for each @ sign, validate each as an email:
+   reading back until an invalid character, and reading forward to find a dot and terminate at an invalid char
+
+OUTPUT (list of anything output: introduction, data items, labels, prompts) : 
+-introduction of objective, author, user instructions/rules
+- prompt for input file name
+- prompt for output file name
+- output output and input file name
+- output prompt for confirmation
+- if file is empty, output file is empty
+- if no email addresses, inform user of this
+- each valid email address
+- number of email addresses
+
+DATA (list of all data items: definition, data type, formatting, or any other specifications):
+- dfile: default filename, used for both input and output
+- enterKey: boolean: true if enter key is pressed, false if else
+- iFileName: input file name, user chosen
+- oFileName: output file name, user chosen
+- continue string
+- string line for each line of input file
+- intiger nEmails - number of valid email addresses detected
+- boolean hasDot - true if detected email address has a dot after, but not next to the @ symbol
+- intiger dotPOS - position (index) of the dot found in detected email address
+- boolean isValid - true if character is a valid email character: a-z, A-Z, -, _, ., +
+- string anEmail - used to store and print each detected valid email
+
+3. Algorithm instructions (recipe)
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 dFileName = "fileContainingEmails.txt"
+30 enterKey = false
+40 output a prompt to the console using dFileName
+50 input iFileName
+60 if length of iFileName is 0, then enterKey = true
+61 if last 4 chars of filename are .txt, go to 64
+62 output "The file name must end in \".txt\". Please try again: "
+63 go to 40
+64 if filename is 5 chars or more, or more, go to 70
+65 output "The file name must be at least 5 charactes long. Please try again:"
+66 go to 40
+70 if enterKey is true, then iFileName = dFileName 
+80 if enterKey is true, then dFileName = "copyPasteMyEmails.txt", else dFileName = iFileName
+90 output a prompt to the console using dFileName
+100 input oFileName
+110 enterKey = false;
+120 if length of oFilename is 0, then enterKey = true
+130 if enter key is true, the oFileName = dFilename
+140 output label for the input file name, and iFileName
+150 output label for the output file name, and oFileName
+160 output a prompt to press ENTER key to continue
+170 input a character
+*** find @ signs
+180 open input file
+190 go to next line, if next line is EOF, skip to 999
+200 go to next character, if line has no more characters, skip to 250
+210 if character is not "@", go to 200
+220 go back one character
+222 if character is not valid: not a-z, A-Z, -, _, ., +, or is start of the line, go to 226
+224 go to 220
+226 Starting back at @ symbol, go forward one character
+228 if character is a dot, set hasDot equal to true, and set dotPOS to current index
+230 if character is not valid: not a-z, A-Z, -, _, ., +, or is end of the line, go to 240
+232 go to next char and go back to 228
+242 if there are characters before @, after @, there is a dot after the @, and the dot is not right next to the @, go on, else invalid email -> go to 250
+244 set range of characters from start to end to anEmail
+246 print anEmail
+250 go back to 190
+999 END
+
+4. Test cases (list purpose of each test case, any input values, and expected results)
+
+Test case #1: choose default
+Enter input filename [default: fileContainingEmails.txt]: 
+Enter output filename [default: copyPasteMyEmails.txt]: 
+Input file: fileContainingEmails.txt
+Output file: copyPasteMyEmails.txt
+press ENTER key to continue:
+
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 dFileName = "fileContainingEmails.txt"
+30 enterKey = false
+40 output a prompt to the console using dFileName
+50 input iFileName
+60 if length of iFileName is 0 -> enterKey = true
+61 if last 4 chars of filename are .txt, go to 64
+64 if filename is 5 chars or more, or more, go to 70
+70 if enterKey is true -> then iFileName = dFileName = fileContainingEmails.txt
+80 if enterKey is true, then dFileName = "copyPasteMyEmails.txt", else dFileName = iFileName
+90 output a prompt to the console using dFileName
+100 input oFileName
+110 enterKey = false;
+120 if length of oFilename is 0 -> enterKey = true
+130 if enter key is true -> the oFileName = dFilename = copyPasteMyEmails.txt
+140 output label for the input file name, and fileContainingEmails.txt
+150 output label for the output file name, and copyPasteMyEmails.txt
+160 output a prompt to press ENTER key to continue
+170 input a character
+999 END
+
+Test case #2: 
+Enter input filename [default: fileContainingEmails.txt]: x.txt 
+Enter output filename [default: x.txt]: 
+Input file: x.txt
+Output file: x.txt
+press ENTER key to continue:
+
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 dFileName = "fileContainingEmails.txt"
+30 enterKey = false
+40 output a prompt to the console using dFileName
+50 input iFileName = x.txt
+60 if length of iFileName is 0, -> false
+61 if last 4 chars of filename are .txt, go to 64
+62 output "The file name must end in \".txt\". Please try again: "
+63 go to 40
+64 if filename is 5 chars or mmore, or more, go to 70
+65 output "The file name must be at least 5 charactes long. Please try again:"
+66 go to 40
+70 if enterKey is true, -False
+80 else dFileName = iFileName = x.txt
+90 output a prompt to the console using dFileName
+100 input oFileName
+110 enterKey = false;
+120 if length of oFilename is 0 -> then enterKey = true
+130 if enter key is true -> the oFileName = dFilename = x.txt
+140 output label for the input file name, and x.txt
+150 output label for the output file name, and x.txt
+160 output a prompt to press ENTER key to continue
+170 input a character
+999 END
+
+Test case #3:
+Enter input filename [default: fileContainingEmails.txt]: 
+Enter output filename [default: copyPasteMyEmails.txt]: y.txt 
+Input file: fileContainingEmails.txt
+Output file: y.txt
+press ENTER key to continue:
+
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 dFileName = "fileContainingEmails.txt"
+30 enterKey = false
+40 output a prompt to the console using dFileName
+50 input iFileName = ""
+60 if length of iFileName is 0 -> then enterKey = true
+61 if last 4 chars of filename are .txt, go to 64
+64 if filename is 5 chars or more, go to 70
+70 if enterKey is true -> then iFileName = dFileName = fileContainingEmails.txt
+80 if enterKey is true -> then dFileName = "copyPasteMyEmails.txt"
+90 output a prompt to the console using dFileName
+100 input oFileName = y.txt
+110 enterKey = false;
+120 if length of oFilename is 0, false
+130 if enter key is true, false
+140 output label for the input file name, and fileContainingEmails.txt
+150 output label for the output file name, and y.txt
+160 output a prompt to press ENTER key to continue
+170 input a character
+999 END
+
+Test case #4:
+Enter input filename [default: fileContainingEmails.txt]: x.txt 
+Enter output filename [default: x.txt]: y.txt 
+Input file: x.txt
+Output file: y.txt
+press ENTER key to continue:
+
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 dFileName = "fileContainingEmails.txt"
+30 enterKey = false
+40 output a prompt to the console using dFileName
+50 input iFileName = x.txt
+60 if length of iFileName is 0 -> false
+61 if last 4 chars of filename are .txt, go to 64
+64 if filename is 5 chars, or more, go to 70
+70 if enterKey is true -> false
+80 else dFileName = iFileName = x.txt
+90 output a prompt to the console using x.txt
+100 input oFileName = y.txt
+110 enterKey = false;
+120 if length of oFilename is 0 -> false
+130 if enter key is true -> false
+140 output label for the input file name, and x.txt
+150 output label for the output file name, and y.txt
+160 output a prompt to press ENTER key to continue
+170 input a character
+999 END
+
+Test Case #5: 
+Enter input filename [default: fileContainingEmails.txt]: .txt
+The file name must be at least 5 charactes long. Please try again:
+Enter input filename [default: fileContainingEmails.txt]: x.txt
+Enter output filename [default: x.txt]: y.txt 
+Input file: x.txt
+Output file: y.txt
+press ENTER key to continue:
+
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 dFileName = "fileContainingEmails.txt"
+30 enterKey = false
+40 output a prompt to the console using dFileName
+50 input iFileName = .txt
+60 if length of iFileName is 0 -> false
+61 if last 4 chars of filename are .txt, go to 70
+62 output "The file name must be at least 5 charactes long. Please try again:"
+63 go to 40
+40 output a prompt to the console using dFileName
+50 input iFileName = x.txt
+60 if length of iFileName is 0 -> false
+61 if last 4 chars of filename are .txt, go to 70
+70 if enterKey is true -> false
+80 else dFileName = iFileName = x.txt
+90 output a prompt to the console using x.txt
+100 input oFileName = y.txt
+110 enterKey = false;
+120 if length of oFilename is 0 -> false
+130 if enter key is true -> false
+140 output label for the input file name, and x.txt
+150 output label for the output file name, and y.txt
+160 output a prompt to press ENTER key to continue
+170 input a character
+999 END
+
+Test case #6: choose default
+Enter input filename [default: fileContainingEmails.txt]: 0.txt
+Enter output filename [default: 0.txt]: 
+Input file: 0.txt
+Output file: 0.txt
+press ENTER key to continue:
+
+**0.txt:
+Nothing
+here
+...
+Should say "no emails"
+@
+@x
+x@
+x@x
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 dFileName = "fileContainingEmails.txt"
+30 enterKey = false
+40 output a prompt to the console using dFileName
+50 input iFileName = 0.txt
+60 if length of iFileName is 0 -> false
+61 if last 4 chars of filename are .txt, go to 64
+64 if filename is 5 chars or more, or more, go to 70
+80 dFileName = iFileName = 0.txt
+90 output a prompt to the console using dFileName
+100 input oFileName = <enter>
+110 enterKey = false;
+130 oFileName = 0.txt
+140 output label for the input file name, and 0.txt
+150 output label for the output file name, and 0.txt
+160 output a prompt to press ENTER key to continue
+170 input a character
+180 open input file
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters ->false
+210 if character is "@", output the line, no @'s in "Nothing"
+220 go back to 190
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters ->false
+210 if character is "@", output the line, no @'s in "..."
+220 go back to 190
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters ->false
+210 if character is "@", output the line, no @'s in "Nothing"
+220 go back to 190
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters ->false
+210 if character is "@", output the line, no @'s in "Should say "no emails""
+220 go back to 190
+190 go to first line, if next line is EOF -> false
+200 go to next character, if line has no more characters, skip to 220
+210 if character is "@" -> true -> output the line:
+@
+220 go back to 190
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters -> skip to 220
+220 go back to 190
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters, skip to 220
+210 if character is "@" -> true -> output the line:
+@x
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters, skip to 220
+210 if character is "@" -> false, skip to 220
+220 go back to 190
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters -> true skip to 220
+220 go back to 190
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters, skip to 220
+210 if character is "@" -> false, skip to 220
+220 go back to 190
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters, skip to 220
+210 if character is "@" -> true, output line
+x@
+220 go back to 190
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters -> true skip to 220
+220 go back to 190
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters, skip to 220
+210 if character is "@" -> false, skip to 220
+220 go back to 190
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters, skip to 220
+210 if character is "@" -> true, output line
+x@x
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters, skip to 220
+210 if character is "@" -> false, skip to 220
+220 go back to 190
+190 go to next line, if next line is EOF -> true -> go to 999
+999 END
+
+Test case #7: choose default
+Enter input filename [default: fileContainingEmails.txt]: 8.txt
+Enter output filename [default: 8.txt]: 
+Input file: 8.txt
+Output file: 8.txt
+press ENTER key to continue:
+
+**8.txt:
+AWestcott@dvc.edu;
+bosborne@dvc.edu; 
+CDuke@dvc.edu; 
+CHaynes@dvc.edu
+
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 dFileName = "fileContainingEmails.txt"
+30 enterKey = false
+40 output a prompt to the console using dFileName
+50 input iFileName = 8.txt
+60 if length of iFileName is 0 -> false
+61 if last 4 chars of filename are .txt, go to 64
+64 if filename is 5 chars or more, or more, go to 70
+80 dFileName = iFileName = 8.txt
+90 output a prompt to the console using dFileName
+100 input oFileName = <enter>
+110 enterKey = false;
+130 oFileName = 8.txt
+140 output label for the input file name, and 8.txt
+150 output label for the output file name, and 8.txt
+160 output a prompt to press ENTER key to continue
+170 input a character
+*** find @ signs
+180 open 8.txt file
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters, skip to 220
+210 if character is "@", output the line -> AWestcott@dvc.edu has one @:
+AWestcott@dvc.edu;
+220 go back to 190
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters, skip to 220
+210 if character is "@", output the line -> bosborne@dvc.edu; has one @:
+bosborne@dvc.edu;
+220 go back to 190
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters, skip to 220
+210 if character is "@", output the line -> CDuke@dvc.edu; has one @:
+CDuke@dvc.edu;
+220 go back to 190
+190 go to next line, if next line is EOF -> false
+200 go to next character, if line has no more characters, skip to 220
+210 if character is "@", output the line -> CHaynes@dvc.edu has one @:
+CHaynes@dvc.edu
+220 go back to 190
+190 go to next line, if next line is EOF -> go to 999
+999 END
+
+Test case #8: 9.txt - expected output: rburns@dvc.edu
+
+**9.txt:
+rburns@dvc.edu
+
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 dFileName = "fileContainingEmails.txt"
+30 enterKey = false
+40 output a prompt to the console using dFileName
+50 input iFileName = 9.txt
+60 if length of iFileName is 0 ->false
+61 if last 4 chars of filename are .txt, go to 64
+64 if filename is 5 chars or more, go to 70
+70 if enterKey is true, then iFileName = dFileName = 9.txt
+80 dFileName = iFileName = 9.txt
+90 output a prompt to the console using dFileName
+100 input oFileName
+110 enterKey = true
+130 if enter key is true, the oFileName = dFilename = 9.txt
+140 output label for the input file name, and iFileName
+150 output label for the output file name, and oFileName
+160 output a prompt to press ENTER key to continue
+170 input a character
+*** find @ signs
+180 open input file
+190 go to next line, if next line is EOF, skip to 999
+200 go to next character, if line has no more characters, skip to 250
+210 if character is not "@", go to 200
+220 go back one character
+222 if character is not valid: not a-z, A-Z, -, _, ., +, or is start of the line, go to 226
+224 go to 220
+reaches start of line, continue
+226 Starting back at @ symbol, go forward one character
+228 if character is a dot, set hasDot equal to true, and set dotPOS to current index
+hasDot = true, dotPOS = 10
+230 if character is not valid: not a-z, A-Z, -, _, ., +, or is end of the line, go to 240
+232 go to next char and go back to 228
+242 if there are characters before @, after @, there is a dot after the @, and the dot is not right next to the @, go on, else invalid email -> go to 250
+244 set range of characters from start to end to anEmail
+246 print rburns@dvc.edu
+250 go back to 190
+999 END
