@@ -1,0 +1,70 @@
+@copyrighted 1999 Prof. Colber
+Name and ID:  Natalie Valett 1792189
+Course and section: COMSC-110-1021
+
+1. Objective (1 sentence brief description of what this will do): 
+calculate a value in the "Fibonacci number" series
+
+2. Requirements (any and all requirements organized by input, processing, output, data):
+INPUT (any data items to be input): 
+index in fib series
+
+PROCESSING (list of significant parts of the objective that will become the list of code blocks in program):
+1. take in input of index
+2. call function fib with index
+3. until itteration reaches desired index, pass to the function the sum of the last 2 numbers
+4. print
+
+OUTPUT (list of anything output: introduction, data items, labels, prompts) : 
+-introduction of objective, author, user instructions/rules
+- output sequence up to desired index
+
+DATA (list of all data items: definition, data type, formatting, or any other specifications):
+- intiger index [above 0]
+- intiger counter: counts how many itterations to go through
+
+3. Algorithm instructions (recipe)
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 prompt for index of sequence
+30 store input as index
+50 pass index to fib function
+***function
+60 if x is less than 2, go to 80
+70 recall fib with paramater of x-1, and add it to call of fib with paramater x-2
+80 return x
+90 print x
+999 END
+
+4. Test cases (list purpose of each test case, any input values, and expected results)
+
+Test case #1: 3, expected output: 2
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 prompt for index of sequence = 3
+30 store 3 as index 
+50 pass 3 to fib function
+***function
+60 if x is less than 2 -> false
+70 recall fib with paramater of x-1 = 2, and add it to call of fib with paramater x-2 = 1
+60 if x(2) is less than 2 -> false
+70 recall fib with paramater of x-1 = 1, and add it to call of fib with paramater x-2 = 0
+60 if 1 is less than 2 -> go to 80
+80 return 1
+60 if 1 is less than 2 -> go to 80
+80 return 1
+70 return both returns of x, 1+1 = 2
+90 print 2
+999 END
+
+Test case #2: x = 1, expected output = 1
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 prompt for index of sequence = 1
+30 store 1 as index
+50 pass 1 to fib function
+***function
+60 if 1 is less than 2, go to 80
+80 return 1
+90 print 1
+999 END

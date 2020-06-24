@@ -1,0 +1,151 @@
+Teacher
+COMSC-110-8215
+Lab 11
+
+1. Objective: input number of scores to be input, then input that many scores, calculate the maximum score, average score, minimum score, and how many A grade scores.
+
+2. Requirements:
+--INPUT
+size
+scores
+
+--PROCESSING
+input size
+input scores (each score between 0-100)
+sort the scores from low to high
+calculate the maximum, minimum, and average score, and the number scores that are an A grade
+output the sorted scores
+output minimum score
+output high score
+output average score
+output the number of A grade scores
+
+
+--OUTPUT
+objective
+author
+user instructions
+prompt1 "How many scores? "
+prompt2 "Enter a score: "
+label1 "Sorted: "
+label2 "Minimum: "
+label3 "Maximum: "
+label4 "Average: "
+label5 "Number of A grades: "
+
+
+--DATA
+size-->>the number of values to be input (integer)
+array-Scores-->>dynamically defined for SIZE number of values (integer)
+max-->>maximum value of inputed values (integer)
+min-->>minimum value of inputed values (integer)
+sum-->>total of inputed values (integer)
+average-->>average value of inputed values (decimal)
+nGradeA-->>number of scores that are A grade
+temp-->>used for temporarily storing one of the values in the array in the swapping process to sort (integer)
+i-->>outer loop index for sorting (integer)
+j-->>inner loop index for sorting (integer)
+
+
+3. Algorithm Instructions
+***user information
+10 output objective
+20 output author
+30 output user instructions
+***initialize values
+40 i = 0
+60 sum = 0
+70 average = 0
+80 min = 100
+90 max = 0
+100 output "How many scores? "
+110 input size
+**fill array by input
+120 output "Enter a score [0-100]: "
+130 input temp
+140 scores[count] = temp
+150 count = count + 1
+160 if count < size, go to line 120
+**Sort
+170 if scores[i] < scores[j] switch values
+180 j = j + 1
+190 if j >= count, i = i + 1, j = 0
+200 if i < count, go to line 170
+**min and max value
+205 i = 0
+210 if scores[i] < min, min = scores[i]
+220 if scores[i] > max, max = scores[i]
+225 i = i + 1
+230 if i < count, go to 210
+***calculate average
+240 if count > 0 then average = sum / count
+**find num of A grades
+250 if scores[i] > 90, nGradeA += 1
+260 i ++
+270 if i < count, fo to 250
+***output results
+280 output "sorted: "
+290 output array values
+300 output "min: ", output min
+310 output "max: ", output max
+320 output "average: ", output average
+330 output nGradeA, output " 'A' grades entered
+999 END
+
+
+4. Test Cases
+Test Case #1: SIZE=4. Input values: 96 94 64 92.  Expected results: minimum=64. maximum=96. average=86.5 number of A grades=3.
+***user information
+10 output objective
+20 output author
+30 output user instructions
+***initialize values
+40 i = 0
+60 sum = 0
+70 average = 0
+80 min = 100
+90 max = 0
+100 output "How many scores? "
+110 input size = 4
+**fill array by input
+120 output "Enter a score [0-100]: "
+130 input temp = 96
+140 scores[count] = temp = 96
+150 count = count + 1
+160 if count < size, go to line 120
+130 input temp = 94
+140 scores[count] = temp = 94
+150 count = count + 1
+160 if count < size, go to line 120
+130 input temp = 64
+140 scores[count] = temp = 64
+150 count = count + 1
+160 if count < size, go to line 120
+130 input temp = 92
+140 scores[count] = temp = 92
+150 count = count + 1
+160 if count < size, go to line 120
+**Sort
+170 if scores[i] < scores[j] switch values
+180 j = j + 1
+190 if j >= count, i = i + 1, j = 0
+200 if i < count, go to line 170
+sorted: 64, 92, 94, 96
+**min and max value
+205 i = 0
+210 if scores[i] < min, min = scores[i] -> min = 64
+220 if scores[i] > max, max = scores[i] -> max = 96
+***calculate average
+240 if count > 0 then average = sum / count = 86.5
+**find num of A grades
+250 if scores[i] > 90, nGradeA += 1
+260 i ++
+270 if i < count, fo to 250
+***output results
+280 output "sorted: " , 64, 92, 94, 96
+290 output array values
+300 output "min: ", output 64 
+310 output "max: ", output 96
+320 output "average: ", output 86.5
+330 output 0, output " 'A' grades entered
+999 END

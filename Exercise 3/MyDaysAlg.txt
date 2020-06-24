@@ -1,0 +1,42 @@
+@copyrighted 1999 Prof. Colber
+Name and ID:  Natalie Valett 1792189
+Course and section: COMSC-110-1021
+
+1. Objective: Calculate number of days between DOB and Due date of project
+
+2. Requirements (any and all requirements organized by input, processing, output, data): 
+INPUT (any data items to be input): n/a
+totalDays = 365 * (dueYear - DOByear) - ((dueYear - DOByear) % 4)
+totalDays += 30.42 * (dueMonth - DOBmonth)
+totalDays += dueDay - DOBdays
+
+
+PROCESSING (list of significant parts of the objective that will become the list of code blocks in program):
+1. 
+
+OUTPUT (list of anything output: introduction, data items, labels, prompts) : 
+-introduction of objective, author, user instructions/rules
+
+
+DATA (list of all data items: definition, data type, formatting, or any other specifications):
+- int totalDays - initialize at 0
+- int DOBmonth - Month that user was born
+- int DOBday - Day that user was born
+- int DOByear - Year that user was born
+- int dueMonth - Month that assignment is due
+- int dueDay - day of month that assignment is due
+- int dueYear - Year that assignment is due
+3. Algorithm instructions (recipe)
+***introduction 
+10 output introduction: objective, author, instructions/rules
+
+999 END
+
+4. Test cases (list purpose of each test case, any input values, and expected results)
+
+Test case #1: 
+10
+
+999 END
+
+Test case #2: 

@@ -1,0 +1,116 @@
+@copyrighted 1999 Prof. Colber
+Name and ID:  Natalie Valett 1792189
+Course and section: COMSC-110-1021
+
+1. Objective (1 sentence brief description of what this will do): 
+read scores from input file scores.txt and calculate the average and number above average using linked lists
+
+2. Requirements (any and all requirements organized by input, processing, output, data):
+INPUT (any data items to be input): 
+input scores from file scores.txt
+
+PROCESSING (list of significant parts of the objective that will become the list of code blocks in program):
+1. initialize pointer nodes
+2. for each line in scores.txt, create a temporary object node that stores line's score as value
+3. add temp score to front of linked list
+4. Calculate the average
+5 calculate the number of scores over the average
+
+OUTPUT (list of anything output: introduction, data items, labels, prompts) : 
+-introduction of objective, author, user instructions/rules
+- values from input file
+- average
+- num over average
+
+DATA (list of all data items: definition, data type, formatting, or any other specifications):
+  input file name fileName = scores.txt
+  empty linked list Score
+  temp pointer for each new node aScore
+  travelling pointer p
+  intiger i: loop counter 
+  total of all entered scores scoreTotal
+  average of all scores
+  nGreater, num of scores greater than average
+
+3. Algorithm instructions (recipe)
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 open input file
+30 if next line in file = EOF, skip to 60
+35 create a temporary object for this line's score
+40 temporarialy store the line's score as value in this object
+45 add temp score to front of linked list
+50 go back to 30
+60 Traverse the linked list; if no more items, skip to 90
+70 add value of object to totalScores
+75 add 1 to counter
+80 go to 60
+***Calculate the average
+90 average = totalScores/counter
+***calculate the number of scores over the average
+100 Traverse the linked list; if no more items, skip to 130
+110 if object's value is greater than average, add 1 to nGreater
+120 go to 100
+130 print values, average, and nGreater
+999 END
+
+4. Test cases (list purpose of each test case, any input values, and expected results)
+
+Test case #1: expected output: average: 66, nGreater: 1
+Scores.txt:
+55
+66
+77
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 open input file scores.txt
+30 if next line in file = EOF -> false
+35 create a temporary object for this line's score, 55
+40 temporarialy store 55 in this object
+45 add temp score to front of linked list
+50 go back to 30
+30 if next line in file = EOF -> false
+35 create a temporary object for this line's score, 66
+40 temporarialy store 66 in this object
+45 add temp score to front of linked list
+50 go back to 30
+30 if next line in file = EOF -> false
+35 create a temporary object for this line's score, 77
+40 temporarialy store 77 in this object
+45 add temp score to front of linked list
+50 go back to 30
+30 if next line in file = EOF, skip to 60
+60 Traverse the linked list; if no more items -> false
+70 add 55 of object to totalScores, = 55
+75 add 1 to counter, = 1
+80 go to 60
+60 Traverse the linked list; if no more items -> false
+70 add 66 of object to totalScores, = 121
+75 add 1 to counter, = 2
+80 go to 60
+60 Traverse the linked list; if no more items -> false
+70 add 77 of object to totalScores, = 198
+75 add 1 to counter, = 3
+80 go to 60
+60 if no more items -> skip to 90
+***Calculate the average
+90 average = 198/3 = 66
+***calculate the number of scores over the average
+100 Traverse the linked list; if no more items -> false
+110 if 55 is greater than 66, -> false
+120 go to 100
+100 Traverse the linked list; if no more items -> false
+110 if 66 is greater than 66, -> false
+120 go to 100
+100 Traverse the linked list; if no more items -> false
+110 if 77 is greater than 66, -> true, nGreater = 1
+120 go to 100
+100 if no more items, skip to 130
+130 print values:
+55
+66
+77
+average: 66
+nGreater: 1
+999 END
+

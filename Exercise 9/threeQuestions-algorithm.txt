@@ -1,0 +1,71 @@
+@copyrighted 1999 Prof. Colber
+Name and ID:  Natalie Valett 1792189
+Course and section: COMSC-110-1021
+
+1. Objective (1 sentence brief description of what this will do): Ask user 3 questions using a function and increment their points based
+on answer
+
+2. Requirements (any and all requirements organized by input, processing, output, data):
+INPUT (any data items to be input): 
+Answers (formatting if includes doubles); take into account different wording of answers
+
+PROCESSING (list of significant parts of the objective that will become the list of code blocks in program):
+1. Function that takes in 2 paramaters, the question and answer
+
+OUTPUT (list of anything output: introduction, data items, labels, prompts) : 
+-introduction of objective, author, user instructions/rules
+- weather they got q's right or wrong, and what the correct answer was if incorrect
+- number of points
+
+DATA (list of all data items: definition, data type, formatting, or any other specifications):
+- int points (initialize to 0)
+- bool correct
+- string ans
+
+3. Algorithm instructions (recipe)
+***introduction 
+Subprogram algorithm for q&a
+10 Prompt question
+20 save input as ans
+25 if ans is exit code, break to 999
+30 if ans is correct, line 40
+35 if ans is wrong, line 60
+40 add one to points
+50 "Correct, you're correct!" -> print points
+60 Wrong -> print correct answer -> print points
+
+//MAIN
+10 output introduction: objective, author, instructions/rules
+20 call q&a subprogram with first q and a
+30 call q&a subprogram with second q and a
+40 call q&a subprogram with third q and a
+50 print You got (points)/3 questions correct
+999 END
+
+4. Test cases (list purpose of each test case, any input values, and expected results)
+
+Test case #1: a1 = 1111 = wrong; a2 = 0014 = correct; a3 = 0010 = correct
+10 output introduction: objective, author, instructions/rules
+20 call q&a subprogram with first q and a
+10F Prompt "How do you write 7 in binary? [4 digits expected] "
+20F save 1111 as ans
+35F if ans is wrong, line 60
+60F Wrong -> print correct answer (0111) -> print points (0)
+30 call q&a subprogram with second q and a
+10F Prompt "How do you write 20 in hexadecimal? [4 digits expected] "
+20F save 0014 as ans
+30F if ans is correct, line 40
+40F add one to points
+50F "Correct, you're correct!" -> print points
+40 call q&a subprogram with third q and a
+10F Prompt "How do you write 64 in octal? [4 digits expected] "
+20F save 0010 as ans
+30F if ans is correct, line 40
+40F add one to points
+50F "Correct, you're correct!" -> print points
+50 print You got (2)/3 questions correct
+999 END
+
+999 END
+
+Test case #2: 

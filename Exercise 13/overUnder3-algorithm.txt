@@ -1,0 +1,88 @@
+@copyrighted 1999 Prof. Colber
+Name and ID:  Natalie Valett 1792189
+Course and section: COMSC-110-1021
+
+1. Objective (1 sentence brief description of what this will do): Number Guessing Game
+
+2. Requirements (any and all requirements organized by input, processing, output, data):
+INPUT (any data items to be input): 
+intiger guesses 1-100
+
+PROCESSING (list of significant parts of the objective that will become the list of code blocks in program):
+1. take in input
+2. check that guess hasn't been guessed before
+3. add guess to list
+4. compare guess to number
+
+OUTPUT (list of anything output: introduction, data items, labels, prompts) : 
+-introduction of objective, author, user instructions/rules
+- each guess, give feedback about guess relative to number
+
+DATA (list of all data items: definition, data type, formatting, or any other specifications):
+- int guess: 1-100, user input
+- random number to be guessed: 1-100
+- max_guesses: 100
+- list of guesses
+- nguesses to keep track of number of guesses
+- already guessed flag
+3. Algorithm instructions (recipe)
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 output "I'm thinking of a number between 1 and 100. Guess what it is: "
+30 store input as guess
+40 if guess is already in list, output already guessed and go to 90
+50 if add guess to list
+60 if guess is equal to number, print "correct, the number is", number and skip to 999
+70 if guess is less than number, print too low, guess again and go to 90 
+80 if guess is more than number, print too high, guess again and go to 90
+90 if guess is not equal to number, go back to 30
+999 END
+
+4. Test cases (list purpose of each test case, any input values, and expected results)
+
+Test case #1: 
+***introduction num = 32, guesses = 50, 25, 37, 30, 32
+10 output introduction: objective, author, instructions/rules
+20 output "I'm thinking of a number between 1 and 100. Guess what it is: "
+30 store 50 as guess
+40 if guess is already in list -> False
+50 add guess to list
+60 if guess is equal to number -> False
+70 if guess is less than number -> False
+80 if guess is more than number TRUE -> print too high, guess again and go to 90
+90 if guess was not equal to number TRUE -> go back to 30
+30 store 50 as guess
+40 if guess is already in list -> False
+50 add guess to list
+60 if guess is equal to number -> False
+70 if guess is less than number TRUE -> print too high, guess again and go to 90
+90 if guess was not equal to number TRUE -> go back to 30
+30 store 37 as guess
+40 if guess is already in list -> False
+50 add guess to list
+60 if guess is equal to number -> False
+70 if guess is less than number -> False
+80 if guess is more than number TRUE -> print too high, guess again and go to 90
+90 if guess was not equal to number TRUE -> go back to 30
+30 store 32 as guess
+40 if guess is already in list -> False
+50 add guess to list
+60 if guess is equal to number -> True, print "correct, the number is", number and skip to 999
+
+999 END
+
+Test case #2: same number twice, num = 68
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 output "I'm thinking of a number between 1 and 100. Guess what it is: "
+30 store 5 as guess
+40 if guess is already in list -> false
+50 add guess to list
+60 if guess is equal to number -> false
+70 if guess is less than number, TRUE, print too low, guess again and go to 90 
+90 if guess is not equal to number, go back to 30
+30 store 5 as guess
+40 if guess is already in list, TRUE -> output already guessed and go to 90
+90 if guess is not equal to number, go back to 30
+...
+999 END

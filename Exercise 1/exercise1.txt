@@ -1,0 +1,37 @@
+1. Copy each of the following parts into file exercise1.txt and complete.
+
+1a. Explain in words what are the 3 control structures and how each of the 3 control structures 
+works in general.
+	- Sequence: How the program flows liniarly from top-down, beginning at an entry point and proceding statement by statement
+	- Selection: How the program uses logic based on conditional true/false statements to determine what sections of code to run
+	- Repetition: How the program uses looping to repeat a segment of code in order to create resuable and concise code
+
+1b. Explain in words what are the 3 kinds of programming errors and give examples.
+	- Syntax errors: When code violates the rules of the language (ex: using = instead of == to check for equality)
+	- Logic errors: When the result of the program is incorrect due to flaws in its logic (ex: used the wrong formula to solve for area)
+	- Runtime errors: When you ask the program to do something it can't (ex: divide by 0)
+ 
+1c. What are the 5 functions of all computers?
+	- Input
+	- Processing
+	- Output
+	- Data
+	- Communication
+
+1d. Explain in words what is a statement and what is an expression and what is the difference.
+A statement is a coherent command that can be executed, whereas an expression is a snippit of that
+larger statement that cannot be run on its own, such as a conditional like x > 5
+
+1e. What are the 2 major categories of software and the 3 subcategories of each.
+	- Appliction
+		- productivity
+		- education
+		- entertainment
+	- Systems
+		- operating systems
+		- utilities
+		- Compilers/inturpurters/assembelers
+1f. What are the 3 language translators and how do they work? They translate what to what?
+	Code editors: text editors that are created specifically for code editing, and offer templates, line numbers, and syntax highlighting
+	Text editors: Software like notepad which offer an editor for text but few additional tools, especially for coding
+	IDE: Integrated Development enviornment, include color coding, line numbers, extentions and integrated compilers

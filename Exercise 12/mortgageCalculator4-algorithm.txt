@@ -1,0 +1,55 @@
+@copyrighted 1999 Prof. Colber
+Name and ID:  Natalie Valett 1792189
+Course and section: COMSC-110-1021
+
+1. Objective (1 sentence brief description of what this will do): 
+Create a morgage calculator to return amount of monthly payments
+
+2. Requirements (any and all requirements organized by input, processing, output, data):
+INPUT (any data items to be input): 
+user ID for password
+
+PROCESSING (list of significant parts of the objective that will become the list of code blocks in program):
+1. 
+
+OUTPUT (list of anything output: introduction, data items, labels, prompts) : 
+-introduction of objective, author, user instructions/rules
+
+
+DATA (list of all data items: definition, data type, formatting, or any other specifications):
+-user ID for password
+-months of payment (intiger)
+- payment - amount paid each month (decimal)
+- password - user id which lets program run
+- passAttempt - attempted password entry
+- amountBorrowed: loan to be paid off
+- interestRate: interest rate in decimal form
+- years: years of payment
+
+3. Algorithm instructions (recipe)
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 declare variables
+30 prompt for password/id
+40 store user input
+45 if passAttempt is correct go on, if incorrect go to 30
+50 create mortgage struct mort
+60 assign values
+70 calculate monthly mortgage payments based on input values
+80 output mortgage rate, years, and calculated monthly payments
+999 END
+
+4. Test cases (list purpose of each test case, any input values, and expected results)
+
+Test case #1: password correct (999), amountBorrowed = 270000, interestRate = .05125, years = 30
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 declare variables
+30 prompt for password/id
+40 store 999 as user input
+45 passAttempt is correct -> go on
+50 create mortgage struct mort
+60 assign amountBorrowed = 270000, interestRate = .05125, years = 30
+70 calculate monthly mortgage = $13837.50
+80 output mortgage rate, years, and calculated monthly payments
+999 END

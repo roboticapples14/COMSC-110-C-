@@ -1,0 +1,109 @@
+@copyrighted 1999 Prof. Colber
+Name and ID:  Natalie Valett 1792189
+Course and section: COMSC-110-1021
+
+1. Objective (1 sentence brief description of what this will do): Calculate average height of everyone in the room
+
+2. Requirements (any and all requirements organized by input, processing, output, data):
+INPUT (any data items to be input): 
+-Height in inches (repetitively taken from everyone in the room)
+
+PROCESSING (list of significant parts of the objective that will become the list of code blocks in program):
+	1. Output introduction
+	2. Input each person's height and simultaniously count each person
+	3. Sum their height
+	4. Output results
+
+OUTPUT (list of anything output: introduction, data items, labels, prompts) : 
+- introduction of objective, author, user instructions/rules
+- prompt "What is your height in inches?"
+- label "The average height of everyone in the room is: "
+- averageAge
+
+DATA (list of all data items: definition, data type, formatting, or any other specifications): 
+- height (integer) = each person's height in inches [valid values: 0-110]
+- count (integer) = number of people in the room [valid values: >= 0]
+- sum (integer) = sum of all the heights
+- averageHeight (decimal) = average height of all the people in the room (sum divided by num of people)
+
+3. Algorithm instructions (recipe)
+1 count = 0
+2 sum = 0
+3 averageHeight = 0
+***introduction 
+10 output introduction: objective, author, instructions/rules
+***Input each person's height and count each person
+20 Prompt "What is the height (in inches) of the next person? (enter 0 when no one is left) "
+30 Store input as height
+40 if height = 0, skip to line 70
+50 sum += height
+60 count ++
+65 Go back to 20
+***Calculate the average height
+70 averageHeight = sum / count
+***Output results
+80 output label "The average height of everyone in the room is: "
+90 output averageHeight
+999 END
+
+4. Test cases (list purpose of each test case, any input values, and expected results)
+
+Test case #1: purpose: 3 people are in the room. input values = 60, 70, 80. ageverageAge = 30
+1 count = 0
+2 sum = 0
+3 averageHeight = 0
+10 Calculate the average Height of everyone int the room. Author: Natalie
+20 Prompt "What is the height (in inches) of the next person? (enter 0 when no one is left) "
+30 height = 60
+40 height != 0, -> continue
+50 sum = 60
+60 count = 1
+65 Go back to 20
+20 Prompt "What is the height (in inches) of the next person? (enter 0 when no one is left) "
+30 height = 70
+40 height != 0, -> continue
+50 sum = 70
+60 count = 2
+65 Go back to 20
+20 Prompt "What is the height (in inches) of the next person? (enter 0 when no one is left) "
+30 height = 80
+40 height != 0, -> continue
+50 sum = 80
+60 count = 3
+65 Go back to 20
+20 Prompt "What is the height (in inches) of the next person? (enter 0 when no one is left) "
+30 height = 0
+40 height = 0, -> break to line 70
+70 averageHeight = 210 / 3 = 70
+80 output label "The average height of everyone in the room is: "
+90 output 70
+999 END
+
+Test case #2: purpose: 0 people are in the room. input values = . ageverageHeight = 0
+1 count = 0
+2 sum = 0
+3 averageHeight = 0
+10 Calculate the average Height of everyone int the room. Author: teacher
+20 Prompt "What is the height (in inches) of the next person? (enter 0 when no one is left) "
+30 height = 0
+40 height = 0, -> break to line 70
+70 averageHeight = 0/0 --> Runtime error
+
+Test case #3: purpose: 1 person is in the room who's height is 76. input values = 76. ageverageHeight = 0
+1 count = 0
+2 sum = 0
+3 averageHeight = 0
+10 Calculate the average Height of everyone int the room. Author: Natalie
+20 Prompt "What is the height (in inches) of the next person? (enter 0 when no one is left) "
+30 height = 76
+40 height != 0, -> continue
+50 sum = 76
+60 count = 1
+65 Go back to 20
+20 Prompt "What is the height (in inches) of the next person? (enter 0 when no one is left) "
+30 height = 0
+40 height = 0, -> break to line 70
+70 averageAge = 76 / 1 = 76
+80 output label "The average age of everyone in the room is: "
+90 output 76
+999 END

@@ -1,0 +1,105 @@
+@copyrighted 1999 Prof. Colber
+Name and ID:  Natalie Valett 1792189
+Course and section: COMSC-110-1021
+
+1. Objective (1 sentence brief description of what this will do): 
+
+2. Requirements (any and all requirements organized by input, processing, output, data):
+INPUT (any data items to be input): 
+- double initDeposit (user entry)
+
+PROCESSING (list of significant parts of the objective that will become the list of code blocks in program):
+1. Take initDeposit and each itteration of weeks, double value and add that value to total
+
+OUTPUT (list of anything output: introduction, data items, labels, prompts) : 
+-introduction of objective, author, user instructions/rules
+- how many weeks until $1000
+- how many weeks until $100000000
+- how many weeks until $100000000000
+
+DATA (list of all data items: definition, data type, formatting, or any other specifications):
+- double value (user entry)
+- int weeks
+- double total
+
+3. Algorithm instructions (recipe)
+***introduction 
+//howManyWeeks function
+10 weeks = 0
+20 total = 0
+30 if total < goal, skip to 80
+40 add deposit to total
+50 double deposit
+60 add 1 to weeks
+70 go back to 30
+80 print "in (weeks) weeks, you will have (goal) dollars
+
+
+//MAIN
+10 output introduction: objective, author, instructions/rules
+20 Prompt for initial deposit
+25 store input as deposit
+30 call howManyWeeks with goal = 1000
+40 call howManyWeeks with goal = 1000000
+50 call howManyWeeks with goal = 1000000000
+999 END
+
+4. Test cases (list purpose of each test case, any input values, and expected results)
+
+Test case #1: deposit = 5
+10 output introduction: objective, author, instructions/rules
+20 Prompt for initial deposit
+25 store 5 as deposit
+30 call howManyWeeks with goal = 1000
+
+10F weeks = 0
+20F total = 0
+30F if 0 < 1000, skip to 80
+40F add 5 to total, total = 5
+50F double deposit, deposit = 10
+60F add 1 to weeks, weeks = 1
+70F go back to 30
+30F if 5 < 1000, skip to 80
+40F add 10 to total, total = 15
+50F double deposit, deposit = 20
+60F add 1 to weeks, weeks = 2
+70F go back to 30
+30F if 15 < 1000, skip to 80
+40F add 20 to total, total = 35
+50F double deposit, deposit = 40
+60F add 1 to weeks, weeks = 3
+70F go back to 30
+30F if 35 < 1000, skip to 80
+40F add 40 to total, total = 75
+50F double deposit, deposit = 80
+60F add 1 to weeks, weeks = 4
+70F go back to 30
+30F if 75 < 1000, skip to 80
+40F add 80 to total, total = 155
+50F double deposit, deposit = 160
+60F add 1 to weeks, weeks = 5
+70F go back to 30
+30F if 155 < 1000, skip to 80
+40F add 160 to total, total = 315
+50F double deposit, deposit = 360
+60F add 1 to weeks, weeks = 6
+70F go back to 30
+30F if 315 < 1000, skip to 80
+40F add 315 to total, total = 635
+50F double deposit, deposit = 720
+60F add 1 to weeks, weeks = 7
+70F go back to 30
+30F if 635 < 1000, skip to 80
+40F add 720 to total, total = 1275
+50F double deposit, deposit = 1440
+60F add 1 to weeks, weeks = 8
+70F go back to 30
+30F if 1275 < 1000, skip to 80
+80F print "in (weeks) weeks, you will have (goal) dollars
+
+40 call howManyWeeks with goal = 1000000
+50 call howManyWeeks with goal = 1000000000
+
+999 END
+
+Test case #2: 

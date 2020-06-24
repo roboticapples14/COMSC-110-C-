@@ -1,0 +1,66 @@
+@copyrighted 1999 Prof. Colber
+Name and ID:  Natalie Valett 1792189
+Course and section: COMSC-110-1021
+
+1. Objective (1 sentence brief description of what this will do): Collect keyboard input about the user
+
+2. Requirements (any and all requirements organized by input, processing, output, data): 
+- Inputed from keyboard
+INPUT (any data items to be input): 
+- int luckyNum
+- string favoriteMovie
+- double age
+- char initial
+
+PROCESSING (list of significant parts of the objective that will become the list of code blocks in program):
+1. 
+
+OUTPUT (list of anything output: introduction, data items, labels, prompts) : 
+-introduction of objective, author, user instructions/rules
+- Prompt for luckyNum
+- prompt for favoriteMovie
+- prompt for age
+- prompt for initial
+
+DATA (list of all data items: definition, data type, formatting, or any other specifications):
+- int luckyNum 
+- string favoriteMovie
+- double age (round to one digit)
+- char initial
+
+3. Algorithm instructions (recipe)
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 declare luckyNum
+30 declare favoriteMovie
+40 declare age
+50 declare initial
+60 Prompt for luckyNum
+70 store input in luckynum
+80 prompt for favoriteMovie
+90 store input in favoriteMovie
+100 prompt for age
+110 store input in age
+120 prompt for initial
+130 store input in initial
+140 output user data
+999 END
+
+4. Test cases (list purpose of each test case, any input values, and expected results)
+
+Test case #1: luckyNum = 14, movie = "juno", age = 17, initial = 'N'
+10 output introduction: objective, author, instructions/rules
+20 declare luckyNum
+30 declare favoriteMovie
+40 declare age
+50 declare initial
+60 Prompt for luckyNum
+70 store 14 in luckynum
+80 prompt for favoriteMovie
+90 store "Juno" in favoriteMovie
+100 prompt for age
+110 store 17 in age
+120 prompt for initial
+130 store 'N' in initial
+140 output user data
+999 END

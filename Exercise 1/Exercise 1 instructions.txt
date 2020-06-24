@@ -1,0 +1,29 @@
+Exercise 1
+Due Wednesday by 8:15am  Points 25  Submitting a file upload  File Types txt Available Jun 18 at 12:30pm - Jun 19 at 11:59pm 1 day
+0. revise averageAge-algorithm.txt that we developed in class to work with additional test cases.
+
+1. Copy each of the following parts into file exercise1.txt and complete.
+
+1a. Explain in words what are the 3 control structures and how each of the 3 control structures 
+works in general.
+
+1b. Explain in words what are the 3 kinds of programming errors and give examples.
+
+1c. What are the 5 functions of all computers?
+
+1d. Explain in words what is a statement and what is an expression and what is the difference.
+
+1e. What are the 2 major categories of software and the 3 subcategories of each.
+
+1f. What are the 3 language translators and how do they work? They translate what to what?
+
+2. Using the course algorithm template, write a complete algorithm to calculate the average 
+height of everyone in the classroom. Name your algorithm file: averageHeight-algorithm.txt
+
+3. Please submit the following files:
+
+averageAge-algorithm.txt
+
+averageHeight-algorithm.txt
+
+exercise1.txt

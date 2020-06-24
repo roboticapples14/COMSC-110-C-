@@ -1,0 +1,99 @@
+@copyrighted 1999 Prof. Colber
+Name and ID:  Natalie Valett 1792189
+Course and section: COMSC-110-1021
+
+1. Objective (1 sentence brief description of what this will do): 4 function calculator
+
+2. Requirements (any and all requirements organized by input, processing, output, data):
+INPUT (any data items to be input): 
+- int operator [1 = addition, 2 = subtraction, 3 = multiplication, 4 = division]
+- double num1
+- double num2
+
+PROCESSING (list of significant parts of the objective that will become the list of code blocks in program):
+1. Processing desired operator
+2. executing calculations based on operator indicated
+
+OUTPUT (list of anything output: introduction, data items, labels, prompts) : 
+-introduction of objective, author, user instructions/rules
+- Output prompt for operator indication: clarify [1 = addition, 2 = subtraction, 3 = multiplication, 4 = division]
+
+DATA (list of all data items: definition, data type, formatting, or any other specifications):
+- int operator [1 = addition, 2 = subtraction, 3 = multiplication, 4 = division]
+- double num1
+- double num2
+- double result
+
+3. Algorithm instructions (recipe)
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 output "Enter 1 to add, enter 2 to subtract, enter 3 to multiply, enter 4 to divide. "
+30 store input as operator
+40 prompt for num1
+45 store input in num1
+50 prompt for num2
+55 store input in num2
+60 if operator = 1, skip to 100
+70 if operator = 2, skip to line 110
+80 if operator = 3, skip to line 120
+90 if operator = 4, skip to line 130
+100 result = num1 + num2
+105 skip to 140
+110 result = num1 - num2
+115 skip to 140
+120 result = num1 * num2
+125 skip to 140
+130 result = num1 / num2
+135 skip to 140
+140 output result
+150 if continue, go to line 20
+999 END
+
+4. Test cases (list purpose of each test case, any input values, and expected results):
+Add 10 and 2
+
+10 output introduction: objective, author, instructions/rules
+20 output "Enter 1 to add, enter 2 to subtract, enter 3 to multiply, enter 4 to divide. "
+30 1 -> add
+40 prompt for num1
+45 10
+50 prompt for num2
+55 2
+60 operator = 1, skip to 100
+100 result = 10 + 2 = 12
+140 output 12
+150 false -> end
+999 END
+
+Test case #2: 
+divide 5 by 2, then subtract 40 and 60
+
+10 output introduction: objective, author, instructions/rules
+20 output "Enter 1 to add, enter 2 to subtract, enter 3 to multiply, enter 4 to divide. "
+30 4 -> divide
+40 prompt for num1
+45 5
+50 prompt for num2
+55 2
+60 if operator = 1, false
+70 if operator = 2, false
+80 if operator = 3, false
+90 if operator = 4, true -> skip to line 130
+130 result = 5 / 2 = 2.5
+135 skip to 140
+140 output 2.5
+150 continue -> go to line 20
+
+20 output "Enter 1 to add, enter 2 to subtract, enter 3 to multiply, enter 4 to divide. "
+30 2 -> subtract
+40 prompt for num1
+45 40
+50 prompt for num2
+55 60
+60 if operator = 1, false
+70 if operator = 2, true -> skip to line 110
+110 result = 40 - 60 = -20
+115 skip to 140
+140 output -20
+150 continue = false, end
+999 END

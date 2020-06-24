@@ -1,0 +1,57 @@
+@copyrighted 1999 Prof. Colber
+Name and ID:  Natalie Valett 1792189
+Course and section: COMSC-110-1021
+
+1. Objective (1 sentence brief description of what this will do): Write a program to determine how far away a boat can see a lighthouse at sea. 
+
+2. Requirements (any and all requirements organized by input, processing, output, data):
+INPUT (any data items to be input): 
+
+
+PROCESSING (list of significant parts of the objective that will become the list of code blocks in program):
+1. miles = sqrt(.8 * height)
+
+OUTPUT (list of anything output: introduction, data items, labels, prompts) : 
+-introduction of objective, author, user instructions/rules
+- Prompt for height of lighthouse (in feet)
+- Return number of miles it can be seen
+
+DATA (list of all data items: definition, data type, formatting, or any other specifications):
+-double height
+- double miles
+
+3. Algorithm instructions (recipe)
+***introduction 
+10 output introduction: objective, author, instructions/rules
+20 declare double height
+30 declare double miles
+40 prompt for height of lighthouse in feet
+50 store input in height
+60 miles = sqrt(.8 * height)
+70 format miles
+80 ooutput result
+999 END
+
+4. Test cases (list purpose of each test case, any input values, and expected results)
+
+Test case #1: height = 30 feet
+10 output introduction: objective, author, instructions/rules
+20 declare double height
+30 declare double miles
+40 prompt for height of lighthouse in feet
+50 store 30 in height
+60 miles = sqrt(.8 * 30)
+70 format miles (to 0 decimal points)
+80 output "A 30 foot tall lighthouse can be seen from 5 miles away."
+999 END
+
+Test case #2: 
+10 output introduction: objective, author, instructions/rules
+20 declare double height
+30 declare double miles
+40 prompt for height of lighthouse in feet
+50 store 100 in height
+60 miles = sqrt(.8 * 100)
+70 format miles (to 0 decimal points)
+80 output "A 100 foot tall lighthouse can be seen from 9 miles away."
+999 END

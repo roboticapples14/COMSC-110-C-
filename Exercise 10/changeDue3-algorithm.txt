@@ -1,0 +1,174 @@
+COMSC-110
+Natalie Valett
+
+1. Objective:  calculate change due in a transaction using these U.S. bills – no cents: $1, $2, $5, $10, $20, $50, $100, $500, $1000, $5000, $10000, and $100000 bills.
+
+2. Requirements:
+--INPUT: 
+amountOwed = set amount by author
+cashPaid = set amount by author
+amountOwed is always less than cashPaid.
+cashPaid cannot be zero or negative.
+
+--PROCESSING: 
+The paid out bills should include the fewest number of bills. For example, do not include two $10 bills when you can include one $20 bill instead. 
+get amount owed from line 1 of file
+get amount paid from line 2 of file
+totalChangeDue = cashPaid - amountOwed
+changeDue = totalChangeDue
+hundered = changeDue / 100000
+changeDue = remainder from changeDue / 100000
+thousand10 = changeDue /10000
+changeDue = remainder from changeDue / 10000
+thousand5 = changeDue / 5000
+changeDue = remainder from changeDue / 5000
+thousand = changeDue / 1000
+changeDue = remainder from changeDue / 1000
+hundred5 = changeDue / 500
+changeDue = remainder from changeDue / 500
+hundred = changeDue /100
+changeDue = remainder from changeDue / 100
+fifty = changeDue / 50
+changeDue = remainder from changeDue / 50
+twenty = changeDue / 20
+changeDue = remainder from changeDue / 20
+ten = changeDue / 10
+changeDue = remainder from changeDue / 10
+five = changeDue / 5
+
+changeDue = remainder from changeDue
+one = changeDue
+repeat until EOF
+
+
+
+--OUTPUT:
+objective
+author 
+user instructions: "Program will stay paused until you hit enter to confirm that the file change.txt has amount owed on line 1 and cash paid on line 2"
+label1: "amount owed: " 
+amountOwed
+label2: "amount cash paid: "
+cashPaid
+label3: "Change due: "
+totalChangeDue
+label4: "Change paid out in: "
+label5: "this many $100,000 bills: "
+thousand100
+label6: "this many $10,000 bills: "
+thousand10
+label7: "this many $5,000 bills: "
+thousand5
+label8: "this many $1,000 bills: "
+thousand
+label9: "this many $500 bills: "
+hundred5
+label10: "this many $100 bills: "
+hundred
+label11: "this many $50 bills: "
+fifty
+label12: "this many $20 bills: "
+twenty
+label13: "this many $10 bills: "
+ten
+label14: "this many $5 bills: "
+five
+label15: "this many $2 bills: "
+two
+label16: "this many $1 bills: "
+one
+
+--DATA:
+string fileName
+string line
+ifstream fin
+amountOwed-->>amount owed (integer) - line 1 of input file
+cashPaid-->>amount tendered to pay for the amount owed (integer) - line 2 of input file
+totalChangeDue-->>the difference between amountOwed and cashPaid (integer)
+changeDue-->>change due for each value of bills (integer)
+thousand100-->>number of $100000 bills (integer)
+thousand10-->>number of $10000 bills (integer)
+thousand5-->>number of $5000 bills (integer)
+thousand-->>number of $1000 bills (integer)
+hundred5-->>number of $500 bills (integer)
+hundred-->>number of $100 bills (integer)
+fifty-->>number of $50 bills (integer)
+twenty-->>number of $20 bills (integer)
+ten-->>number of $10 bills (integer)
+five-->>number of $5 bills (integer)
+two-->>number of $2 bills (integer)
+one-->>number of $1 bills (integer)
+
+
+3. Algorithm Instructions
+//calculateChange()
+10 changedue = paid - cost
+20 calculate hundredthousands
+30 calculate tenthousande
+40 calculate 5thoudands
+50 calculate thousands
+60 calculate 5hundreds
+70 calculate hundreds
+80 calculate fifties
+90 calculate twenties
+100 calculate tens
+110 calculate fives
+120 calculate twos
+130 calculate ones
+140 if each bill is = 0, cut to 160
+150 if not, print each bill's value
+160 if more bills, go back to 140
+
+//MAIN
+10 output introduction
+20 output author
+25 string fileName = "change.txt"
+27 string line;
+30 int cost
+40 int amountPaid
+50 amountOwed = amountTendered - cashPayment
+60 Print amountOwed 
+70 print cashPaid 
+75 call calculateChange (pass in cost and paid)
+FUNCTION
+90 for each bill we're calculating:
+100 int billName = changeDue / billValue;
+110 changeDue = changeDue % billValue;
+120 for each bill calculated:
+130 print number of bills needed
+  
+
+4. Test cases
+Test Case #1: cashPayment = 45000; amountTendered = 100000;
+10 Objective: calculate change due in a transaction using these U.S. bills \n– no cents: $1, $2, $5, $10, $20, $50, $100, $500, $1000, $5000, $10000, and $100000 bills.
+20 Programmer: Natalie Valett
+30 cashPayment = 45000
+40 amountTendered = 100000
+50 amountOwed = 55000
+60 print 45000
+70 print 100000
+80 print 65000
+91 tenThousands = 5
+92 fiveThousands = 1
+101this many ten thousand dollar bills: 5
+102 this many five thousand dollar bills: 1
+
+Test Case #2: cashPayment = 338; amountTendered = 1000;
+10 Objective: calculate change due in a transaction using these U.S. bills \n– no cents: $1, $2, $5, $10, $20, $50, $100, $500, $1000, $5000, $10000, and $100000 bills.
+20 Programmer: Natalie Valett
+30 cashPayment = 338
+40 amountTendered = 1000
+50 amountOwed = 662
+60 print 338
+70 print 1000
+80 print 662
+94 fiveHundereds = 1
+95 Hundereds = 1
+96fifties = 1
+98 tens = 1
+99.1 twos = 1
+104 this many five hundered dollar bills: 1
+105 this many hundered dollar bills: 1
+106 this many fifty dollar bills: 1
+108 this many ten dollar bills: 1
+109.1 this many two dollar bills: 1
